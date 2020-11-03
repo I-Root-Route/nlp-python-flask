@@ -2,10 +2,12 @@ import spacy
 from spacy import displacy
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from googletrans import Translator
 import en_core_web_sm
-import re
+
+
 
 
 class NLProcessing(object):
@@ -64,6 +66,3 @@ class NLProcessing(object):
 
     def get_nb_words(self):
         return len(self.text)
-
-
-
