@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>NLP App</title>
+</head>
+<body>
+    <ul class="nav">
+        {% if current_user.is_authenticated %}
+            <li class="nav-link"><a href="{{url_for('index')}}">Home</a></li>
+            <li class="nav-link"><a href="{{url_for('account')}}">Account</a></li>
+            <li class="nav-link"><a href="{{url_for('reset_password')}}">Reset Password</a></li>
+            <li class="nav-link"><a href="{{url_for('logout')}}">Logout</a></li>
+        {%else%}
+            <li class="nav-link"><a href="{{url_for('login')}}">Login</a></li>
+            <li class="nav-link"><a href="{{url_for('register')}}">Register</a></li>
+        {% endif %}
+    </ul>
+    <hr class="my-4">
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

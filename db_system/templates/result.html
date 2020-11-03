@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-12">
+    <h1 class="text-success">Result</h1>
+</div>
+
+<div class="col-12">
+<div class="jumbotron">
+    <h2 class="text-primary">Entities</h2>
+    {{ text | markdown}}
+
+    <hr class="my-4">
+
+    <h2 class="text-primary">Data</h2>
+    Volume: {{ nb_words }} words
+
+    <hr class="my-4">
+
+    <h2 class="text-primary">Sentiment Analysis</h2>
+    <h3 class="text-success">Overall</h3>
+    Negative Point: {{ sentiments[0]["neg"] }}<br>
+    Neutral Point: {{ sentiments[0]["neu"] }}<br>
+    Positive Point: {{ sentiments[0]["pos"] }}<br>
+    <h3 class="text-success">Negative Sentences</h3>
+    {% for neg_sent in sentiments[1] %}
+    <p>{{ neg_sent }}<br></p>
+    {% endfor  %}
+    <h3 class="text-success">Positive Sentences</h3>
+    {% for pos_sent in sentiments[2] %}
+    <p>{{ pos_sent }}<br></p>
+    {% endfor  %}
+
+    <hr class="my-4">
+
+    <h2 class="text-primary">EN-JA</h2>
+    {% for k, v in en_ja.items() %}
+    {{ k }} : {{ v }} &emsp;
+    {% endfor %}
+</div>
+</div>
+
+
+{% endblock %}

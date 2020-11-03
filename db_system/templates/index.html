@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <div class="form-group">
+        <div class="col-12">
+            <h2>NLP</h2>
+            <form method="POST" action={{ url_for('result') }}>
+            <label>
+                <textarea class="form-control" name="text" rows="30" cols="200" placeholder="Text here..."></textarea>
+            </label>
+            <br>
+            <button type="submit">Analyze</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
