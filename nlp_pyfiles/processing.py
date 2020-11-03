@@ -4,12 +4,13 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import nltk
 from nltk.corpus import stopwords
 from googletrans import Translator
+import en_core_web_sm
 import re
 
 
 class NLProcessing(object):
     def __init__(self, text):
-        self.nlp = spacy.load('en')
+        self.nlp = en_core_web_sm.load()
         self.text = self.nlp(text)
 
     def get_entities(self):

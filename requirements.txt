@@ -3,6 +3,7 @@ Flask_SQLAlchemy==2.4.3
 Werkzeug==1.0.1
 nltk==3.5
 email_validator==1.1.1
+https://github.com/explosion/spacy-models/releases/download/en_core_web_md-2.0.0/en_core_web_md-2.0.0.tar.gz
 Flask_Bcrypt==0.7.1
 googletrans==3.0.0
 Flask_WTF==0.14.3
