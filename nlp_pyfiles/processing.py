@@ -9,7 +9,7 @@ import re
 
 class NLProcessing(object):
     def __init__(self, text):
-        self.nlp = spacy.load('en_core_web_sm')
+        self.nlp = spacy.load('en')
         self.text = self.nlp(text)
 
     def get_entities(self):
