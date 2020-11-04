@@ -3,6 +3,7 @@ from spacy import displacy
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from googletrans import Translator
 import en_core_web_sm
+import re
 
 
 class NLProcessing(object):
